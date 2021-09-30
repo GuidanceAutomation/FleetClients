@@ -25,6 +25,20 @@ namespace FleetClients.Core
 		/// <returns>If true, there is a charge error being reported</returns>
 		public static bool GetChargeFaultFlagForKingpinVehicleAgent(this IFleetManagerClient client, IPAddress vehicleIpAddress)
 		{
+			// Check the vehicle type is correct
+			var descResult = client.GetKingpinDescription(vehicleIpAddress);
+			if (descResult.ServiceCode != 0)
+			{
+				throw new FormatException("Vehicle type of vehicle could not be verified");
+			}
+			else
+			{
+				int agvType = int.Parse(descResult.Value.Element("agvType").Attribute("Id").Value);
+				if (agvType != 1)
+					throw new FormatException("AgvType of queried vehicle is not compatible with this functionality");
+				// otherwise just continue
+			}
+
 			bool result = false;
 
 			var currentFleetState = client.FleetState.KingpinStates.ToArray(); // Make a copy of the fleet state to prevent any modification problems
