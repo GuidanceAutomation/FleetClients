@@ -118,6 +118,7 @@
     </Compile>
     <Compile Include="EndpointSettings_ExtensionMethods.cs" />
     <Compile Include="FleetManagerClient.cs" />
+    <Compile Include="FleetManagerClient_ExtensionMethods.cs" />
     <Compile Include="FleetManagerServiceCallback.cs" />
     <Compile Include="FleetTemplate.cs" />
     <Compile Include="FleetTemplateManager.cs" />
