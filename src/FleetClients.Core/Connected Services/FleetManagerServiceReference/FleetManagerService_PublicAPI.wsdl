@@ -45,6 +45,12 @@
   <wsdl:message name="IFleetManagerService_PublicAPI_v2_0_SubscriptionHeartbeat_OutputMessage">
     <wsdl:part name="parameters" element="tns:SubscriptionHeartbeatResponse" />
   </wsdl:message>
+  <wsdl:message name="IFleetManagerService_PublicAPI_v2_0_UnsubscribeHeartbeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeHeartbeat" />
+  </wsdl:message>
+  <wsdl:message name="IFleetManagerService_PublicAPI_v2_0_UnsubscribeHeartbeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeHeartbeatResponse" />
+  </wsdl:message>
   <wsdl:message name="IFleetManagerService_PublicAPI_v2_0_GetKingpinDescription_InputMessage">
     <wsdl:part name="parameters" element="tns:GetKingpinDescription" />
   </wsdl:message>
@@ -102,6 +108,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" message="tns:IFleetManagerService_PublicAPI_v2_0_SubscriptionHeartbeat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeatResponse" message="tns:IFleetManagerService_PublicAPI_v2_0_SubscriptionHeartbeat_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" message="tns:IFleetManagerService_PublicAPI_v2_0_UnsubscribeHeartbeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeatResponse" message="tns:IFleetManagerService_PublicAPI_v2_0_UnsubscribeHeartbeat_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetKingpinDescription">
       <wsdl:input wsaw:Action="http://tempuri.org/IFleetManagerService_BaseAPI/GetKingpinDescription" message="tns:IFleetManagerService_PublicAPI_v2_0_GetKingpinDescription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFleetManagerService_BaseAPI/GetKingpinDescriptionResponse" message="tns:IFleetManagerService_PublicAPI_v2_0_GetKingpinDescription_OutputMessage" />
@@ -149,6 +159,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -243,6 +262,15 @@
     </wsdl:operation>
     <wsdl:operation name="SubscriptionHeartbeat">
       <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/SubscriptionHeartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeHeartbeat">
+      <soap12:operation soapAction="http://tempuri.org/ISubscriptionService/UnsubscribeHeartbeat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
