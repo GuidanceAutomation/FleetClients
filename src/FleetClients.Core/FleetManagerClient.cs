@@ -187,5 +187,10 @@ namespace FleetClients.Core
         {
             channel.SubscriptionHeartbeat(key);
         }
+
+        protected override void HandleUnsubscribeHeartbeat(IFleetManagerService_PublicAPI_v2_0 channel, Guid key)
+        {
+            channel.UnsubscribeHeartbeat(key);
+        }
     }
 }
